@@ -127,9 +127,11 @@ document.querySelectorAll('.accordion-trigger').forEach(trigger => {
   });
 });
 
-// Offerteformulier validatie
+// Offerteformulier: validatie + versturen via Web3Forms
 const quoteForm = document.getElementById('quote-form');
+const quoteSubmit = document.getElementById('quote-submit');
 const confirmation = document.getElementById('form-confirmation');
+const errorMessage = document.getElementById('form-error-message');
 
 function showFieldError(field, message) {
   const errorEl = quoteForm.querySelector(`[data-error-for="${field.id}"]`);
@@ -137,9 +139,10 @@ function showFieldError(field, message) {
   if (errorEl) errorEl.textContent = message || '';
 }
 
-quoteForm.addEventListener('submit', (e) => {
+quoteForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   confirmation.hidden = true;
+  errorMessage.hidden = true;
 
   let isValid = true;
   const requiredFields = quoteForm.querySelectorAll('[required]');
@@ -161,7 +164,34 @@ quoteForm.addEventListener('submit', (e) => {
 
   if (!isValid) return;
 
-  confirmation.hidden = false;
-  quoteForm.reset();
-  requiredFields.forEach(field => showFieldError(field, ''));
+  // Honeypot: als dit veld is ingevuld, is het een bot - stil negeren
+  if (quoteForm.botcheck.checked) {
+    quoteForm.reset();
+    return;
+  }
+
+  quoteSubmit.disabled = true;
+  quoteSubmit.textContent = 'Versturen...';
+
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: new FormData(quoteForm)
+    });
+    const result = await response.json();
+
+    if (result.success) {
+      confirmation.hidden = false;
+      quoteForm.reset();
+      requiredFields.forEach(field => showFieldError(field, ''));
+    } else {
+      errorMessage.hidden = false;
+    }
+  } catch (err) {
+    errorMessage.hidden = false;
+  } finally {
+    quoteSubmit.disabled = false;
+    quoteSubmit.textContent = 'Offerte aanvragen';
+  }
 });

@@ -1,0 +1,14 @@
+Web3forms integratie voor het versturen van aanvragen (moeten we nog onderzoeken)
+
+Werkend offerteformulier via Web3Forms — index.html:387-391, script.js:
+
+Validatie blijft zoals die was, maar bij een geldig formulier wordt er nu écht een fetch-request naar Web3Forms gestuurd.
+Tijdens verzenden wordt de knop uitgeschakeld en toont "Versturen...".
+Bij succes: bevestigingsbericht + formulier wordt geleegd. Bij een fout: nette foutmelding met een directe mailto-link als terugval.
+Een onzichtbaar honeypot-veld (botcheck) is toegevoegd tegen spam-bots.
+
+Ga naar web3forms.com, vul alleen je e-mailadres in (info@studionoir.nl of je eigen adres) — geen account nodig.
+Je krijgt direct een Access Key in je mail.
+Vervang in index.html:388 de waarde YOUR_WEB3FORMS_ACCESS_KEY door die key.
+
+TO DO:
