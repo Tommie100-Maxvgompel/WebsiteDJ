@@ -12,3 +12,8 @@ Je krijgt direct een Access Key in je mail.
 Vervang in index.html:388 de waarde YOUR_WEB3FORMS_ACCESS_KEY door die key.
 
 TO DO:
+- web3forms.com inloggen en werkend maken
+- checken of de pakketen kloppen qua lay out
+- onderzoeken wat de beste manier is om een website te deployen en te hosten
+- Lightbeams tweaken
+- zorgen dat de reviews niet stoppen als je met de muis er overheen gaat of vloeiender laten stoppen.
