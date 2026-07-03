@@ -40,7 +40,10 @@
 
   <!-- 1. HERO -->
   <section id="home" class="hero">
-    <div class="hero-media" role="img" aria-label="Sfeervolle DJ-show setup met warme verlichting op een bruiloft"></div>
+    <video class="hero-media" id="hero-video" autoplay muted loop playsinline poster="images/hero-dj-booth-strand.png">
+      <source src="video/hero-clip.mov" type="video/quicktime">
+    </video>
+    <img class="hero-media" id="hero-fallback-img" src="images/hero-dj-booth-strand.png" alt="DJ Max achter de booth tijdens een sfeervolle show bij zonsondergang">
     <div class="hero-overlay"></div>
     <div class="hero-content fade-in">
       <p class="eyebrow">Mobile Show DJ</p>
@@ -161,7 +164,7 @@
 
       <div class="occasions">
         <article class="occasion-card fade-in">
-          <div class="occasion-media occasion-media--wedding" role="img" aria-label="Sfeervolle lichtshow tijdens een bruiloftsfeest"></div>
+          <img class="occasion-media" src="images/occasion-bruiloft-strandtent.png" alt="DJ Max achter de booth tijdens een bruiloft in een strandtent" loading="lazy">
           <div class="occasion-body">
             <h3>Bruiloften</h3>
             <p>Van ceremonie tot feestavond: een muziekprogramma dat is afgestemd op uw bruiloft, in nauw overleg met het bruidspaar.</p>
@@ -170,7 +173,7 @@
         </article>
 
         <article class="occasion-card fade-in">
-          <div class="occasion-media occasion-media--birthday" role="img" aria-label="Warme sfeerverlichting bij een verjaardagsfeest"></div>
+          <img class="occasion-media" src="images/occasion-verjaardag-paars-licht.png" alt="Paarse sfeerverlichting en DJ-booth bij een verjaardagsfeest" loading="lazy">
           <div class="occasion-body">
             <h3>Verjaardagen &amp; privéfeesten</h3>
             <p>Een compacte of uitgebreide show, volledig afgestemd op de jarige, de gasten en de locatie.</p>
@@ -179,7 +182,7 @@
         </article>
 
         <article class="occasion-card fade-in">
-          <div class="occasion-media occasion-media--corporate" role="img" aria-label="Strakke audiovisuele opstelling bij een bedrijfsevenement"></div>
+          <img class="occasion-media" src="images/occasion-bedrijfsevenement-hal.png" alt="Sfeervolle uplighting en verlichting bij een bedrijfsevenement in een grote zaal" loading="lazy">
           <div class="occasion-body">
             <h3>Bedrijfsevenementen</h3>
             <p>Representatieve audiovisuele ondersteuning bij personeelsfeesten, jubilea en bedrijfsborrels.</p>
@@ -197,23 +200,24 @@
       <h2 class="center fade-in">Eerdere opbouwen en shows</h2>
 
       <div class="gallery" id="gallery">
-        <button class="gallery-item fade-in" data-caption="Lichtshow tijdens bruiloftsfeest">
-          <div class="gallery-media gallery-media--1" role="img" aria-label="Lichtshow tijdens bruiloftsfeest"></div>
+        <button class="gallery-item fade-in" data-full="images/hero-dj-booth-strand.png" data-caption="Sfeervolle show-opbouw bij zonsondergang">
+          <img class="gallery-media" src="images/hero-dj-booth-strand.png" alt="Sfeervolle show-opbouw bij zonsondergang" loading="lazy">
         </button>
-        <button class="gallery-item fade-in" data-caption="DJ-booth opstelling bedrijfsevenement">
-          <div class="gallery-media gallery-media--2" role="img" aria-label="DJ-booth opstelling bedrijfsevenement"></div>
+        <button class="gallery-item fade-in" data-full="images/occasion-bruiloft-strandtent.png" data-caption="DJ-booth tijdens een bruiloft in een strandtent">
+          <img class="gallery-media" src="images/occasion-bruiloft-strandtent.png" alt="DJ-booth tijdens een bruiloft in een strandtent" loading="lazy">
         </button>
-        <button class="gallery-item fade-in" data-caption="Sfeerverlichting bij verjaardagsfeest">
-          <div class="gallery-media gallery-media--3" role="img" aria-label="Sfeerverlichting bij verjaardagsfeest"></div>
+        <button class="gallery-item fade-in" data-full="images/occasion-verjaardag-paars-licht.png" data-caption="Paarse sfeerverlichting bij een verjaardagsfeest">
+          <img class="gallery-media" src="images/occasion-verjaardag-paars-licht.png" alt="Paarse sfeerverlichting bij een verjaardagsfeest" loading="lazy">
         </button>
-        <button class="gallery-item fade-in" data-caption="Uplighting bij bruiloftslocatie">
-          <div class="gallery-media gallery-media--4" role="img" aria-label="Uplighting bij bruiloftslocatie"></div>
+        <button class="gallery-item fade-in" data-full="images/occasion-bedrijfsevenement-hal.png" data-caption="Uplighting bij een bedrijfsevenement in een grote zaal">
+          <img class="gallery-media" src="images/occasion-bedrijfsevenement-hal.png" alt="Uplighting bij een bedrijfsevenement in een grote zaal" loading="lazy">
         </button>
-        <button class="gallery-item fade-in" data-caption="Geluidsopstelling grote zaal">
-          <div class="gallery-media gallery-media--5" role="img" aria-label="Geluidsopstelling grote zaal"></div>
+        <button class="gallery-item fade-in" data-full="images/gallery-geluidsopstelling.png" data-caption="Professionele geluidsopstelling">
+          <img class="gallery-media" src="images/gallery-geluidsopstelling.png" alt="Professionele geluidsopstelling met speakers" loading="lazy">
         </button>
-        <button class="gallery-item fade-in" data-caption="Complete show-opbouw premium pakket">
-          <div class="gallery-media gallery-media--6" role="img" aria-label="Complete show-opbouw premium pakket"></div>
+        <button class="gallery-item gallery-item--video fade-in" data-video="video/gallery-clip.mov" data-caption="Sfeerimpressie van een show in actie">
+          <img class="gallery-media" src="images/gallery-team-djbooth.png" alt="Video-impressie van een show in actie" loading="lazy">
+          <span class="gallery-play" aria-hidden="true">&#9658;</span>
         </button>
       </div>
     </div>

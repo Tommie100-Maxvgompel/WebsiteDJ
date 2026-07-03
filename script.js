@@ -1,3 +1,17 @@
+// Hero-video alleen tonen als de browser .mov daadwerkelijk kan afspelen
+const heroVideo = document.getElementById('hero-video');
+const heroFallbackImg = document.getElementById('hero-fallback-img');
+const prefersReducedMotionHero = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (heroVideo.canPlayType('video/quicktime') && !prefersReducedMotionHero) {
+  heroVideo.addEventListener('playing', () => {
+    heroFallbackImg.style.display = 'none';
+  });
+  heroVideo.play().catch(() => {});
+} else {
+  heroVideo.remove();
+}
+
 // Sticky header: transparant op hero, zwart bij scrollen
 const header = document.getElementById('site-header');
 
@@ -50,8 +64,28 @@ const lightboxClose = document.getElementById('lightbox-close');
 
 gallery.querySelectorAll('.gallery-item').forEach(item => {
   item.addEventListener('click', () => {
-    const media = item.querySelector('.gallery-media');
-    lightboxMedia.style.background = getComputedStyle(media).background;
+    lightboxMedia.innerHTML = '';
+    lightboxMedia.style.background = 'none';
+
+    if (item.dataset.video) {
+      const video = document.createElement('video');
+      video.src = item.dataset.video;
+      video.controls = true;
+      video.autoplay = true;
+      video.style.width = '100%';
+      video.style.height = '100%';
+      video.style.objectFit = 'contain';
+      lightboxMedia.appendChild(video);
+    } else {
+      const img = document.createElement('img');
+      img.src = item.dataset.full;
+      img.alt = item.dataset.caption || '';
+      img.style.width = '100%';
+      img.style.height = '100%';
+      img.style.objectFit = 'cover';
+      lightboxMedia.appendChild(img);
+    }
+
     lightboxCaption.textContent = item.dataset.caption || '';
     lightbox.hidden = false;
     lightboxClose.focus();
@@ -60,6 +94,7 @@ gallery.querySelectorAll('.gallery-item').forEach(item => {
 
 function closeLightbox() {
   lightbox.hidden = true;
+  lightboxMedia.innerHTML = '';
 }
 
 lightboxClose.addEventListener('click', closeLightbox);

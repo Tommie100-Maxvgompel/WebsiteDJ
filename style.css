@@ -250,6 +250,9 @@ p {
 .hero-media {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   background: radial-gradient(circle at 30% 20%, #2a2a2a 0%, #0a0a0a 55%, #000000 100%);
 }
 
@@ -454,12 +457,10 @@ p {
 
 .occasion-media {
   height: 200px;
+  width: 100%;
+  object-fit: cover;
   background: linear-gradient(135deg, #1c1c1c, #050505);
 }
-
-.occasion-media--wedding { background: linear-gradient(135deg, #262220, #050505); }
-.occasion-media--birthday { background: linear-gradient(135deg, #1f1f24, #050505); }
-.occasion-media--corporate { background: linear-gradient(135deg, #202020, #050505); }
 
 .occasion-body {
   padding: 1.5rem;
@@ -488,6 +489,7 @@ p {
 }
 
 .gallery-item {
+  position: relative;
   border: 1px solid var(--gray-border);
   border-radius: var(--radius);
   overflow: hidden;
@@ -503,16 +505,29 @@ p {
 }
 
 .gallery-media {
+  display: block;
+  width: 100%;
   height: 180px;
+  object-fit: cover;
   background: linear-gradient(135deg, #1a1a1a, #040404);
 }
 
-.gallery-media--1 { background: linear-gradient(135deg, #262220, #050505); }
-.gallery-media--2 { background: linear-gradient(135deg, #202020, #050505); }
-.gallery-media--3 { background: linear-gradient(135deg, #1f1f24, #050505); }
-.gallery-media--4 { background: linear-gradient(135deg, #201d1a, #050505); }
-.gallery-media--5 { background: linear-gradient(135deg, #1c1c1c, #050505); }
-.gallery-media--6 { background: linear-gradient(135deg, #232323, #050505); }
+.gallery-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--white);
+  color: var(--white);
+  font-size: 0.9rem;
+}
 
 /* Music */
 .music-embed {
@@ -913,6 +928,7 @@ p {
   height: min(450px, 60vh);
   background: linear-gradient(135deg, #232323, #050505);
   border-radius: var(--radius);
+  overflow: hidden;
 }
 
 .lightbox-caption {
