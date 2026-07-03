@@ -529,57 +529,104 @@ p {
 }
 
 /* Reviews */
-.reviews-slider {
-  margin-top: 3rem;
+.reviews-marquee {
   position: relative;
   overflow: hidden;
+  margin: 3rem 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
 
 .review-track {
   display: flex;
-  transition: transform 0.4s var(--ease);
+  width: max-content;
+  gap: 1.5rem;
+  padding: 0 1.5rem;
+  animation: marquee 70s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.reviews-marquee:hover .review-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-track {
+    animation: none;
+    overflow-x: auto;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
 }
 
 .review-card {
-  flex: 0 0 100%;
+  flex: 0 0 340px;
+  height: 7cm;
   background: var(--gray-card);
   border: 1px solid var(--gray-border);
   border-radius: var(--radius);
-  padding: 2.5rem;
-  text-align: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .review-card p {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: var(--white);
   margin-bottom: 1rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.review-read-more {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--white);
+  border-bottom: 1px solid transparent;
+  align-self: flex-start;
+  margin-top: -0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.review-read-more:hover {
+  border-color: var(--white);
 }
 
 .review-card footer {
+  margin-top: auto;
   font-size: 0.85rem;
   color: var(--gray-text);
 }
 
-.review-controls {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
+.reviews-rating {
+  margin-bottom: 0;
+  font-size: 0.95rem;
 }
 
-.review-controls button {
-  background: transparent;
-  border: 1px solid var(--gray-border);
+.reviews-rating-score {
+  font-weight: 700;
   color: var(--white);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: border-color 0.25s var(--ease);
 }
 
-.review-controls button:hover {
+.reviews-rating a,
+.reviews-link a {
+  color: var(--white);
+  border-bottom: 1px solid transparent;
+}
+
+.reviews-rating a:hover,
+.reviews-link a:hover {
   border-color: var(--white);
+}
+
+.reviews-link {
+  margin-top: 1.5rem;
 }
 
 /* Timeline */
@@ -855,6 +902,10 @@ p {
   justify-content: center;
   gap: 1rem;
   padding: 2rem;
+}
+
+.lightbox[hidden] {
+  display: none;
 }
 
 .lightbox-media {

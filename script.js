@@ -70,26 +70,16 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
 });
 
-// Reviews slider
+// Reviews marquee: kaarten dupliceren voor een naadloze, doorlopende loop
 const reviewTrack = document.getElementById('review-track');
-const reviewPrev = document.getElementById('review-prev');
-const reviewNext = document.getElementById('review-next');
-const reviewCount = reviewTrack.children.length;
-let reviewIndex = 0;
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-function updateReviewSlider() {
-  reviewTrack.style.transform = `translateX(-${reviewIndex * 100}%)`;
+if (!prefersReducedMotion) {
+  const originalCards = Array.from(reviewTrack.children);
+  originalCards.forEach(card => {
+    reviewTrack.appendChild(card.cloneNode(true));
+  });
 }
-
-reviewPrev.addEventListener('click', () => {
-  reviewIndex = (reviewIndex - 1 + reviewCount) % reviewCount;
-  updateReviewSlider();
-});
-
-reviewNext.addEventListener('click', () => {
-  reviewIndex = (reviewIndex + 1) % reviewCount;
-  updateReviewSlider();
-});
 
 // FAQ accordion
 document.querySelectorAll('.accordion-trigger').forEach(trigger => {
