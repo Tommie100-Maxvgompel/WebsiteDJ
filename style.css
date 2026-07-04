@@ -667,6 +667,13 @@ p {
   flex-direction: column;
 }
 
+.review-stars {
+  color: var(--white);
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.75rem;
+}
+
 .review-card p {
   font-size: 0.95rem;
   color: var(--white);
