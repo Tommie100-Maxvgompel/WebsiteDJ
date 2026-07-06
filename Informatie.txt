@@ -17,3 +17,10 @@ TO DO:
 - onderzoeken wat de beste manier is om een website te deployen en te hosten
 - Lightbeams tweaken
 - zorgen dat de reviews niet stoppen als je met de muis er overheen gaat of vloeiender laten stoppen.
+- FAQ en contact verkeerd om
+- Repertoire, algemene voorwaarden, privacy beleid toevoegen
+- Uurprijs toevoegen?
+- FAQ meer vragen toevoegen
+- Begin "Een professionele aanpak, van intake tot afbouw" verwijderen
+- Reactietijd aanpassen
+- Data kunnen blokkeren op website, wanneer niet beschikbaar
