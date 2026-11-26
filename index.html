@@ -8,29 +8,25 @@
 <meta name="keywords" content="DJ bruiloft, DJ bedrijfsfeest, drive-in show, mobile DJ, DJ verjaardag, audiovisuele show">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home">
 
 <a class="skip-link" href="#main">Ga naar inhoud</a>
 
 <header class="site-header" id="site-header">
   <nav class="navbar" aria-label="Hoofdnavigatie">
-    <a href="#home" class="logo">DJ<span>MAX</span></a>
-
+    <a href="index.html" class="logo">DJ<span>MAX</span></a>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#pakketten">Pakketten</a></li>
-      <li><a href="#gelegenheden">Gelegenheden</a></li>
-      <li><a href="#muziek">Muziek</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="over-ons.html">Over ons</a></li>
+      <li><a href="shows.html">Shows</a></li>
+      <li><a href="pakketten.html">Pakketten</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-
-    <a href="#contact" class="btn btn-outline nav-cta">Offerte aanvragen</a>
-
+    <a href="contact.html" class="btn btn-primary nav-cta">Offerte aanvragen</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu openen" aria-expanded="false" aria-controls="nav-links">
       <span></span><span></span><span></span>
     </button>
@@ -39,17 +35,13 @@
 
 <main id="main">
 
-  <!-- 1. HERO -->
-  <section id="home" class="hero">
-    <video class="hero-media" id="hero-video" autoplay muted loop playsinline poster="images/hero-dj-booth-strand.png">
-      <source src="video/hero-clip.mov" type="video/quicktime">
-    </video>
-    <img class="hero-media" id="hero-fallback-img" src="images/hero-dj-booth-strand.png" alt="DJ Max achter de booth tijdens een sfeervolle show bij zonsondergang">
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero-media" src="images/hero-dj-booth-strand.webp" alt="DJ Max achter de booth bij zonsondergang" fetchpriority="high">
     <div class="hero-overlay"></div>
-    <div class="hero-content fade-in">
-      <p class="eyebrow">Mobile Show DJ</p>
-      <h1>Complete shows voor bruiloften, verjaardagen en bedrijfsevenementen.</h1>
-      <p class="hero-sub">Professioneel licht &amp; geluid, muziek op maat en een verzorgde uitvoering van begin tot eind.</p>
+    <div class="hero-content">
+      <h1>Licht, geluid en muziek op maat. U geniet, wij regelen de rest.</h1>
+      <p class="hero-sub">Maak er een feestje van.</p>
       <div class="hero-actions">
         <a href="#pakketten" class="btn btn-primary">Bekijk pakketten</a>
         <a href="#contact" class="btn btn-outline">Vraag offerte aan</a>
@@ -195,337 +187,138 @@
     </div>
   </section>
 
-  <!-- 5. SETUP GALERIJ -->
-  <section id="galerij" class="section section-alt">
-    <span class="light-beam light-beam--3" aria-hidden="true"></span>
-    <div class="section-inner">
-      <p class="eyebrow center fade-in">Galerij</p>
-      <h2 class="center fade-in">Eerdere opbouwen en shows</h2>
-
-      <div class="gallery" id="gallery">
-        <button class="gallery-item fade-in" data-full="images/hero-dj-booth-strand.png" data-caption="Sfeervolle show-opbouw bij zonsondergang">
-          <span class="gallery-frame">
-            <img class="gallery-media" src="images/hero-dj-booth-strand.png" alt="Sfeervolle show-opbouw bij zonsondergang" loading="lazy">
-          </span>
-          <span class="gallery-label">Sfeervolle show-opbouw bij zonsondergang</span>
-        </button>
-        <button class="gallery-item fade-in" data-full="images/occasion-bruiloft-strandtent.png" data-caption="DJ-booth tijdens een bruiloft in een strandtent">
-          <span class="gallery-frame">
-            <img class="gallery-media" src="images/occasion-bruiloft-strandtent.png" alt="DJ-booth tijdens een bruiloft in een strandtent" loading="lazy">
-          </span>
-          <span class="gallery-label">Bruiloft in een strandtent</span>
-        </button>
-        <button class="gallery-item fade-in" data-full="images/occasion-verjaardag-paars-licht.png" data-caption="Paarse sfeerverlichting bij een verjaardagsfeest">
-          <span class="gallery-frame">
-            <img class="gallery-media" src="images/occasion-verjaardag-paars-licht.png" alt="Paarse sfeerverlichting bij een verjaardagsfeest" loading="lazy">
-          </span>
-          <span class="gallery-label">Verjaardagsfeest</span>
-        </button>
-        <button class="gallery-item fade-in" data-full="images/occasion-bedrijfsevenement-hal.png" data-caption="Uplighting bij een bedrijfsevenement in een grote zaal">
-          <span class="gallery-frame">
-            <img class="gallery-media" src="images/occasion-bedrijfsevenement-hal.png" alt="Uplighting bij een bedrijfsevenement in een grote zaal" loading="lazy">
-          </span>
-          <span class="gallery-label">Bedrijfsevenement</span>
-        </button>
-        <button class="gallery-item fade-in" data-full="images/gallery-geluidsopstelling.png" data-caption="Professionele geluidsopstelling">
-          <span class="gallery-frame">
-            <img class="gallery-media" src="images/gallery-geluidsopstelling.png" alt="Professionele geluidsopstelling met speakers" loading="lazy">
-          </span>
-          <span class="gallery-label">Geluidsopstelling</span>
-        </button>
-        <button class="gallery-item gallery-item--video fade-in" data-video="video/gallery-clip.mov" data-caption="Sfeerimpressie van een show in actie">
-          <span class="gallery-frame">
-            <img class="gallery-media" src="images/gallery-team-djbooth.png" alt="Video-impressie van een show in actie" loading="lazy">
-            <span class="gallery-play" aria-hidden="true">&#9658;</span>
-          </span>
-          <span class="gallery-label">Sfeerimpressie (video)</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. MUZIEK -->
-  <section id="muziek" class="section">
-    <span class="light-beam light-beam--1" aria-hidden="true"></span>
-    <div class="section-inner section-inner--narrow">
-      <p class="eyebrow center fade-in">Muziek</p>
-      <h2 class="center fade-in">Beluister de stijl</h2>
-      <p class="section-lead center fade-in">Een indruk van de muziekstijl en mixstijl die tijdens shows gebruikt wordt.</p>
-
-      <div class="music-embed fade-in">
-        <iframe title="SoundCloud profiel Max van Gompel" width="100%" height="450" scrolling="no" frameborder="no" loading="lazy"
-          src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fmaxvangompel&color=%23ffffff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false">
-        </iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. REVIEWS -->
-  <section id="reviews" class="section section-alt">
+  <section id="reviews" class="section section-tight">
     <span class="light-beam light-beam--4" aria-hidden="true"></span>
-    <div class="section-inner section-inner--narrow">
-      <p class="eyebrow center fade-in">Reviews</p>
-      <h2 class="center fade-in">Wat klanten zeggen</h2>
-      <p class="reviews-rating center fade-in">
-        <span class="reviews-rating-score">10/10</span> gemiddeld op
-        <a href="https://showbird.com/nl/acts/23094-dj-max" target="_blank" rel="noopener">Showbird</a>
-      </p>
+    <div class="section-inner">
+      <h2 class="center">Wat klanten zeggen</h2>
     </div>
-
-    <div class="reviews-shield fade-in">
-    <div class="reviews-marquee" id="reviews-marquee">
+    <div class="reviews-marquee">
       <div class="review-track" id="review-track">
         <blockquote class="review-card">
-           <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
-          <p>&ldquo;Super dj, Goede overgangen en opbouw van z'n set. Neemt goede apparatuur mee. En is zeer vriendelijk en behulpzaam. Een aanrader. Muziek genre house gaat hem zeer goed af.&rdquo;</p>
-          <footer>&mdash; Tijs, bedrijfsevenement</footer>
-        </blockquote>
-        <blockquote class="review-card">
-           <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
-          <p>&ldquo;DJ Max heeft gisteren op ons verjaardagsfeest gedraaid en dat heeft hij super gedaan! Hij voelde precies aan welke muziek de gasten wilden horen en zorgde de hele avond voor een geweldige sfeer. Professioneel, netjes en duidelijk iemand die weet wat hij doet. Absoluut een aanrader!&rdquo;</p>
-          <a href="https://showbird.com/nl/acts/23094-dj-max" target="_blank" rel="noopener" class="review-read-more">Lees meer op Showbird</a>
-          <footer>&mdash; Pamela, 40e verjaardag</footer>
-        </blockquote>
-        <blockquote class="review-card">
-           <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
-          <p>&ldquo;Voor ons feest op 30 mei hebben we Max geboekt en daar hebben we absoluut geen spijt van gehad. Vanaf het eerste contact verliep alles prettig en professioneel. Toen hij enkele dagen voor het optreden zijn sleutelbeen brak, nam hij direct contact met ons op...&rdquo;</p>
-          <a href="https://showbird.com/nl/acts/23094-dj-max" target="_blank" rel="noopener" class="review-read-more">Lees meer op Showbird</a>
-          <footer>&mdash; Nadine, 40e verjaardag</footer>
-        </blockquote>
-        <blockquote class="review-card">
-           <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
-          <p>&ldquo;Erg blij met Max, hij is super op tijd en ben heel blij met zijn optreden. Wij als AV bedrijf zullen hem vaker inzetten!&rdquo;</p>
-          <footer>&mdash; Niels, bedrijfsevenement</footer>
-        </blockquote>
-        <blockquote class="review-card">
-           <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
-          <p>&ldquo;Fijn gast die er een gezellige avond van maakt. Goed en netjes geregeld en nog aardig ook. Zeker een aanrader!&rdquo;</p>
-          <footer>&mdash; Albert, 50e verjaardag</footer>
-        </blockquote>
-        <blockquote class="review-card">
-           <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
-          <p>&ldquo;Max is echt een onwijs leuke en goede DJ! Hij communiceert duidelijk, voldoet aan al je wensen, is zeer flexibel en heeft er een onwijs gaaf feest van gemaakt! Nogmaals super bedankt Max, absoluut een aanrader!!&rdquo;</p>
-          <a href="https://showbird.com/nl/acts/23094-dj-max" target="_blank" rel="noopener" class="review-read-more">Lees meer op Showbird</a>
-          <footer>&mdash; Joel, tuinfeest</footer>
-        </blockquote>
-        <blockquote class="review-card">
-           <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
-          <p>&ldquo;Wij hebben DJ Max in gehuurd voor een schoolfeest. Hij weet zonder problemen 800 middelbare scholieren de hele avond op de dansvloer te krijgen &egrave;n houden. Daarbij is het contact met DJ Max goed en reageert hij snel op berichten.&rdquo;</p>
-          <a href="https://showbird.com/nl/acts/23094-dj-max" target="_blank" rel="noopener" class="review-read-more">Lees meer op Showbird</a>
-          <footer>&mdash; Brian, Dalton Den Haag</footer>
-        </blockquote>
-        <blockquote class="review-card">
-           <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
-          <p>&ldquo;DJ Max leverde 1 november een fantastische set! Hij speelde perfect in op de energie van het publiek, met vloeiende overgangen en de juiste nummers op het juiste moment...&rdquo;</p>
-          <a href="https://showbird.com/nl/acts/23094-dj-max" target="_blank" rel="noopener" class="review-read-more">Lees meer op Showbird</a>
-          <footer>&mdash; Robin, tuinfeest</footer>
-        </blockquote>
-        <blockquote class="review-card">
-           <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
-          <p>&ldquo;We hadden DJ Max geboekt voor de opening van onze winkel. Voorafgaand hadden we contact over de invulling van de muziek en dit sloot goed aan bij de sfeer van de avond.&rdquo;</p>
-          <footer>&mdash; Steph, bedrijfsevenement</footer>
-        </blockquote>
-        <blockquote class="review-card">
-           <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
+          <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
           <p>&ldquo;DJ Max werd op maandag pas geboekt voor onze bruiloft op zaterdag! Hij heeft geweldig met ons meegedacht en onze eigen gekozen nummers gedraaid. Fantastisch gedaan!&rdquo;</p>
-          <footer>&mdash; Anna &amp; Sybrand, bruiloft</footer>
+          <footer>Anna &amp; Sybrand, bruiloft</footer>
         </blockquote>
         <blockquote class="review-card">
-           <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
-          <p>&ldquo;Was een top avond, heel gezellig en dj Max heeft het echt heel leuk gedaan! Volgende feestje boeken we hem weer!&rdquo;</p>
-          <footer>&mdash; Tamara, 60e verjaardag</footer>
+          <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
+          <p>&ldquo;Hij voelde precies aan welke muziek de gasten wilden horen en zorgde de hele avond voor een geweldige sfeer. Professioneel, netjes en duidelijk iemand die weet wat hij doet.&rdquo;</p>
+          <footer>Pamela, 40e verjaardag</footer>
         </blockquote>
         <blockquote class="review-card">
-           <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
-          <p>&ldquo;Max maakte er een leuk sfeertje van op ons bedrijfsfeest en stond ook open voor inbreng en aanvragen van muziek. Heel fijn, chill en gezellig!!&rdquo;</p>
-          <footer>&mdash; Emma, bedrijfsevenement</footer>
+          <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
+          <p>&ldquo;Hij weet zonder problemen 800 middelbare scholieren de hele avond op de dansvloer te krijgen &egrave;n houden. Het contact is goed en hij reageert snel op berichten.&rdquo;</p>
+          <footer>Brian, Dalton Den Haag</footer>
         </blockquote>
         <blockquote class="review-card">
-           <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
-          <p>&ldquo;Max heeft vanaf het begin gelijk de juiste muziek te pakken en binnen no time stond iedereen te dansen en was het feest losgebarsten. Klasse gedaan, dikke aanrader! Contacten verliepen heel goed...&rdquo;</p>
-          <a href="https://showbird.com/nl/acts/23094-dj-max" target="_blank" rel="noopener" class="review-read-more">Lees meer op Showbird</a>
-          <footer>&mdash; Michelle, 60e verjaardag</footer>
+          <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
+          <p>&ldquo;Super dj, goede overgangen en opbouw van z'n set. Neemt goede apparatuur mee en is zeer vriendelijk en behulpzaam. Een aanrader.&rdquo;</p>
+          <footer>Tijs, bedrijfsevenement</footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
+          <p>&ldquo;Max is echt een onwijs leuke en goede DJ! Hij communiceert duidelijk, voldoet aan al je wensen, is zeer flexibel en heeft er een onwijs gaaf feest van gemaakt!&rdquo;</p>
+          <footer>Joel, tuinfeest</footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
+          <p>&ldquo;Vanaf het eerste contact verliep alles prettig en professioneel. Daar hebben we absoluut geen spijt van gehad.&rdquo;</p>
+          <footer>Nadine, 40e verjaardag</footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
+          <p>&ldquo;Erg blij met Max, hij is super op tijd en ben heel blij met zijn optreden. Wij als AV-bedrijf zullen hem vaker inzetten!&rdquo;</p>
+          <footer>Niels, bedrijfsevenement</footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
+          <p>&ldquo;Max had vanaf het begin gelijk de juiste muziek te pakken en binnen no time stond iedereen te dansen. Klasse gedaan, dikke aanrader!&rdquo;</p>
+          <footer>Michelle, 60e verjaardag</footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
+          <p>&ldquo;Hij speelde perfect in op de energie van het publiek, met vloeiende overgangen en de juiste nummers op het juiste moment.&rdquo;</p>
+          <footer>Robin, tuinfeest</footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <div class="review-stars" aria-label="5 van de 5 sterren">★★★★★</div>
+          <p>&ldquo;Was een top avond, heel gezellig en DJ Max heeft het echt heel leuk gedaan! Volgende feestje boeken we hem weer!&rdquo;</p>
+          <footer>Tamara, 60e verjaardag</footer>
         </blockquote>
       </div>
     </div>
-    </div>
-
-    <div class="section-inner section-inner--narrow">
-      <p class="reviews-link center fade-in">
-        <a href="https://showbird.com/nl/acts/23094-dj-max" target="_blank" rel="noopener" class="link-arrow">Bekijk alle reviews op Showbird &rarr;</a>
-      </p>
-    </div>
+    <p class="center reviews-link">
+      <a href="https://showbird.com/nl/acts/23094-dj-max" target="_blank" rel="noopener" class="link-arrow">Alle reviews op Showbird &rarr;</a>
+    </p>
   </section>
 
-  <!-- 8. WERKWIJZE -->
-  <section id="werkwijze" class="section">
+  <!-- PAKKETTEN -->
+  <section id="pakketten" class="section">
+    <span class="light-beam light-beam--2" aria-hidden="true"></span>
     <div class="section-inner">
-      <p class="eyebrow center fade-in">Werkwijze</p>
-      <h2 class="center fade-in">Van aanvraag tot nazorg</h2>
-
-      <ol class="timeline">
-        <li class="timeline-step fade-in">
-          <span class="timeline-number">01</span>
-          <h3>Aanvraag &amp; kennismaking</h3>
-          <p>U vraagt vrijblijvend een offerte aan, wij nemen binnen 24 uur contact op voor een eerste kennismaking.</p>
-        </li>
-        <li class="timeline-step fade-in">
-          <span class="timeline-number">02</span>
-          <h3>Intake &amp; muziekwensen</h3>
-          <p>In een persoonlijk gesprek bespreken we de locatie, gasten en muziekwensen, en stellen we het programma samen.</p>
-        </li>
-        <li class="timeline-step fade-in">
-          <span class="timeline-number">03</span>
-          <h3>Opbouw &amp; show</h3>
-          <p>Ruim voor aanvang bouwen wij alles verzorgd op, zodat de show op tijd en zonder zorgen kan beginnen.</p>
-        </li>
-        <li class="timeline-step fade-in">
-          <span class="timeline-number">04</span>
-          <h3>Afbouw &amp; nazorg</h3>
-          <p>Na afloop breken wij netjes af en staan we open voor evaluatie en feedback.</p>
-        </li>
-      </ol>
+      <div class="package-panel">
+      <h2 class="center">Pakketten</h2>
+      <p class="section-lead center">Complete shows met DJ, licht en geluid. Prijzen voor 4 uur, inclusief btw.</p>
+      <div class="price-strip">
+        <a href="pakketten.html#basis"><span>Basis</span><strong>Vanaf €695</strong><small>Tot 50 gasten</small></a>
+        <a href="pakketten.html#standaard" class="is-featured"><span>Standaard</span><strong>Vanaf €795</strong><small>Tot 125 gasten</small></a>
+        <a href="pakketten.html#premium"><span>Premium</span><strong>Vanaf €995</strong><small>Tot 200 gasten</small></a>
+      </div>
+      <ul class="panel-usp">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>DJ, licht en geluid in één</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm12-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>Muziek afgestemd op uw gasten</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zm0-14v5l3 3"/></svg>Opbouw en afbouw geregeld</li>
+      </ul>
+      <p class="center"><a href="pakketten.html" class="btn btn-primary">Bekijk alle pakketten</a></p>
+      </div>
     </div>
   </section>
 
-  <!-- 9. CONTACT / OFFERTE -->
-  <section id="contact" class="section section-alt">
-    <span class="light-beam light-beam--5" aria-hidden="true"></span>
+  <!-- INSTAGRAM -->
+  <section id="instagram" class="section">
+    <span class="light-beam light-beam--3" aria-hidden="true"></span>
     <div class="section-inner">
-      <div class="contact-grid">
-        <div class="contact-info fade-in">
-          <p class="eyebrow">Offerte aanvragen</p>
-          <h2>Vertel ons over uw evenement</h2>
-          <p>Vul het formulier in en ontvang binnen 24 uur een reactie op maat.</p>
-          <ul class="contact-details">
-            <li><strong>Telefoon:</strong> <a href="tel:+31612345678">+31 6 16 89 99 98</a></li>
-            <li><strong>E-mail:</strong> <a href="mailto:maxvangompel@hotmail.com">maxvangompel@hotmail.com</a></li>
-            <li><strong>Reactietijd:</strong> binnen 24 uur</li>
-          </ul>
+      <div class="ig-panel">
+        <div class="ig-intro">
+          <div class="ig-profile">
+            <img class="ig-avatar" src="images/gallery-team-djbooth-sm.webp" alt="" width="64" height="64" loading="lazy">
+            <div>
+              <p class="ig-handle">@maxvangompel</p>
+              <p class="ig-bio">DJ Max &middot; shows, bruiloften &amp; feesten</p>
+            </div>
+          </div>
+          <h2>Volg de shows op Instagram</h2>
+          <p>Foto's en video's van recente feesten, opbouwen en lichtshows. Zo ziet u precies wat u kunt verwachten.</p>
+          <a href="https://www.instagram.com/maxvangompel/" target="_blank" rel="noopener" class="btn btn-primary ig-follow">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6"/></svg>
+            Volgen op Instagram
+          </a>
+          <a href="https://www.instagram.com/maxvangompel/" target="_blank" rel="noopener" class="ig-link">Bekijk de beleving op Instagram &rarr;</a>
         </div>
-
-        <form class="contact-form fade-in" id="quote-form" novalidate>
-          <input type="hidden" name="access_key" value="17d68966-aa03-43e6-9a31-572c03545fe9">
-          <input type="hidden" name="subject" value="Nieuwe offerteaanvraag via de website">
-          <input type="hidden" name="from_name" value="DJ Max website">
-          <input type="checkbox" name="botcheck" class="botcheck-field" tabindex="-1" autocomplete="off">
-
-          <div class="form-row">
-            <div class="form-field">
-              <label for="qf-name">Naam *</label>
-              <input type="text" id="qf-name" name="name" required autocomplete="name">
-              <span class="form-error" data-error-for="qf-name"></span>
-            </div>
-            <div class="form-field">
-              <label for="qf-email">E-mail *</label>
-              <input type="email" id="qf-email" name="email" required autocomplete="email">
-              <span class="form-error" data-error-for="qf-email"></span>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-field">
-              <label for="qf-phone">Telefoonnummer *</label>
-              <input type="tel" id="qf-phone" name="phone" required autocomplete="tel">
-              <span class="form-error" data-error-for="qf-phone"></span>
-            </div>
-            <div class="form-field">
-              <label for="qf-event-type">Type evenement *</label>
-              <select id="qf-event-type" name="eventType" required>
-                <option value="" disabled selected>Kies een optie</option>
-                <option value="bruiloft">Bruiloft</option>
-                <option value="verjaardag">Verjaardag / privéfeest</option>
-                <option value="bedrijfsevenement">Bedrijfsevenement</option>
-                <option value="anders">Anders</option>
-              </select>
-              <span class="form-error" data-error-for="qf-event-type"></span>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-field">
-              <label for="qf-date">Datum evenement *</label>
-              <input type="date" id="qf-date" name="date" required>
-              <span class="form-error" data-error-for="qf-date"></span>
-            </div>
-            <div class="form-field">
-              <label for="qf-location">Locatie *</label>
-              <input type="text" id="qf-location" name="location" required>
-              <span class="form-error" data-error-for="qf-location"></span>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-field">
-              <label for="qf-guests">Aantal gasten *</label>
-              <input type="number" id="qf-guests" name="guests" min="1" required>
-              <span class="form-error" data-error-for="qf-guests"></span>
-            </div>
-            <div class="form-field">
-              <label for="qf-package">Voorkeurspakket</label>
-              <select id="qf-package" name="package">
-                <option value="weet-ik-nog-niet" selected>Weet ik nog niet</option>
-                <option value="basis">Basis</option>
-                <option value="standaard">Standaard</option>
-                <option value="premium">Premium</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-field">
-            <label for="qf-message">Bericht</label>
-            <textarea id="qf-message" name="message" rows="4"></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-block" id="quote-submit">Offerte aanvragen</button>
-
-          <p class="form-confirmation" id="form-confirmation" role="status" hidden>
-            Bedankt voor uw aanvraag! We nemen binnen 24 uur contact met u op.
-          </p>
-          <p class="form-confirmation form-confirmation--error" id="form-error-message" role="status" hidden>
-            Er ging iets mis bij het verzenden. Probeer het opnieuw of mail rechtstreeks naar
-            <a href="mailto:maxvangompel@hotmail.com">maxvangompel@hotmail.com</a>.
-          </p>
-        </form>
+        <!--
+          Live Instagram-feed: maak gratis een widget aan op behold.so (koppel het Instagram-account)
+          en vervang onderstaande ig-grid door de embedcode van Behold.
+        -->
+        <div class="ig-grid">
+          <a href="https://www.instagram.com/maxvangompel/" target="_blank" rel="noopener"><img src="images/hero-dj-paard-moving-heads.webp" alt="Show bij zonsondergang" loading="lazy"></a>
+          <a href="https://www.instagram.com/maxvangompel/" target="_blank" rel="noopener"><img src="images/hero-dj-nederzandt-2025.webp" alt="Verjaardagsfeest met paarse verlichting" loading="lazy"></a>
+          <a href="https://www.instagram.com/maxvangompel/" target="_blank" rel="noopener"><img src="images/hero-dj-keetfeest-2025.webp" alt="Geluidsopstelling" loading="lazy"></a>
+          <a href="https://www.instagram.com/maxvangompel/" target="_blank" rel="noopener"><img src="images/hero-dj-TC-noordwijk-flodder.webp" alt="Bedrijfsevenement met uplighting" loading="lazy"></a>
+          <a href="https://www.instagram.com/maxvangompel/" target="_blank" rel="noopener"><img src="images/occasion-bruiloft-strandtent-sm.webp" alt="Bruiloft in een strandtent" loading="lazy"></a>
+          <a href="https://www.instagram.com/maxvangompel/" target="_blank" rel="noopener" class="ig-more-tile" aria-label="Bekijk meer foto's op Instagram">
+            <img src="images/gallery-team-djbooth-sm.webp" alt="" loading="lazy">
+            <span class="ig-more-overlay">+9</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 10. FAQ -->
-  <section id="faq" class="section">
-    <div class="section-inner section-inner--narrow">
-      <p class="eyebrow center fade-in">Veelgestelde vragen</p>
-      <h2 class="center fade-in">Antwoorden op veelgestelde vragen</h2>
-
-      <div class="accordion" id="accordion">
-        <div class="accordion-item fade-in">
-          <button class="accordion-trigger" aria-expanded="false">
-            Hoe lang duurt de opbouw?
-            <span class="accordion-icon" aria-hidden="true"></span>
-          </button>
-          <div class="accordion-panel">
-            <p>Afhankelijk van het pakket duurt de opbouw gemiddeld 1 tot 2 uur. Wij plannen dit ruim voor aanvang van uw evenement in.</p>
-          </div>
-        </div>
-        <div class="accordion-item fade-in">
-          <button class="accordion-trigger" aria-expanded="false">
-            Kunnen gasten verzoeknummers doen?
-            <span class="accordion-icon" aria-hidden="true"></span>
-          </button>
-          <div class="accordion-panel">
-            <p>Zeker. Bij de Standaard- en Premium-pakketten kunt u vooraf verzoeknummers doorgeven, en tijdens de avond is er ruimte voor verzoeknummers van gasten.</p>
-          </div>
-        </div>
-        <div class="accordion-item fade-in">
-          <button class="accordion-trigger" aria-expanded="false">
-            Wat zijn de reiskosten?
-            <span class="accordion-icon" aria-hidden="true"></span>
-          </button>
-          <div class="accordion-panel">
-            <p>Reiskosten zijn afhankelijk van de locatie en worden altijd vooraf duidelijk vermeld in de offerte, zonder verrassingen achteraf.</p>
-          </div>
-        </div>
-      </div>
+  <!-- CTA -->
+  <section class="section cta-band">
+    <div class="section-inner center">
+      <h2>Is uw datum nog vrij?</h2>
+      <p class="section-lead center">Vraag vrijblijvend een offerte aan. U hoort binnen 24 uur van ons.</p>
+      <a href="contact.html" class="btn btn-primary">Offerte aanvragen</a>
     </div>
   </section>
 
@@ -535,41 +328,24 @@
   <div class="footer-inner">
     <div class="footer-col">
       <p class="logo">DJ<span>MAX</span></p>
-      <p>Complete audiovisuele shows voor bruiloften, verjaardagen en bedrijfsevenementen.</p>
+      <p>Complete shows voor bruiloften, verjaardagen en bedrijfsfeesten.</p>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <p><a href="tel:+31612345678">+31 6 16 89 99 98</a></p>
+      <p><a href="tel:+31616899998">+31 6 16 89 99 98</a></p>
       <p><a href="mailto:maxvangompel@hotmail.com">maxvangompel@hotmail.com</a></p>
     </div>
     <div class="footer-col">
-      <h4>Bedrijfsgegevens</h4>
-      <p>DJ Max &amp; Events</p>
-      <p>KvK: 94969949</p>
-    </div>
-    <div class="footer-col">
-      <h4>Volg ons</h4>
-      <div class="social-links">
-        <a href="https://www.instagram.com/maxvangompel/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
-        <a href="https://www.tiktok.com/@maxvgompel" target="_blank" rel="noopener" aria-label="Tiktok">Tiktok</a>
-      </div>
+      <h4>Volg</h4>
+      <p><a href="https://www.instagram.com/maxvangompel/" target="_blank" rel="noopener">Instagram</a></p>
+      <p><a href="https://www.tiktok.com/@maxvgompel" target="_blank" rel="noopener">TikTok</a></p>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 DJ Max. Alle rechten voorbehouden.</p>
-    <div class="footer-legal">
-      <a href="#">Algemene voorwaarden</a>
-      <a href="#">Privacybeleid</a>
-    </div>
+    <p>&copy; 2026 DJ Max &amp; Events &middot; KvK 94969949</p>
   </div>
 </footer>
 
-<div class="lightbox" id="lightbox" hidden>
-  <button class="lightbox-close" id="lightbox-close" aria-label="Sluiten">&times;</button>
-  <div class="lightbox-media" id="lightbox-media"></div>
-  <p class="lightbox-caption" id="lightbox-caption"></p>
-</div>
-
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
