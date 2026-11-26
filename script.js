@@ -34,6 +34,114 @@ if (reviewTrack && !prefersReducedMotion) {
   });
 }
 
+// Reviews op mobiel: zelf vegen + rustig automatisch doorlopen, oneindig in beide richtingen
+if (reviewTrack) {
+  const marquee = reviewTrack.parentElement;
+  const all = Array.from(reviewTrack.children);
+  const n = all.filter(c => !c.hasAttribute('aria-hidden')).length;
+  const looped = all.length >= 2 * n;
+  const mobile = window.matchMedia('(max-width: 768px)');
+  const step = () => (all.length > 1 ? all[1].offsetLeft - all[0].offsetLeft : 1);
+  const currentIndex = () => Math.round(marquee.scrollLeft / step());
+  const goTo = (i, smooth = true) => marquee.scrollTo({ left: i * step(), behavior: smooth ? 'smooth' : 'instant' });
+
+  // Positie binnen [half, half + n) houden, zodat je altijd beide kanten op kunt vegen
+  const half = Math.floor(n / 2);
+  const normalize = () => {
+    if (!looped || !mobile.matches) return;
+    const i = currentIndex();
+    if (i < half) goTo(i + n, false);
+    else if (i >= half + n) goTo(i - n, false);
+  };
+
+  // Oneindige bolletjes: het actieve staat in het midden, naar de randen worden ze kleiner
+  const VISIBLE = 3;
+  const dots = document.createElement('div');
+  dots.className = 'review-dots';
+  dots.setAttribute('aria-hidden', 'true');
+  const strip = document.createElement('div');
+  strip.className = 'review-dots-strip';
+  const dotEls = [];
+  for (let j = 0; j < 3 * n; j++) {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.tabIndex = -1;
+    dot.addEventListener('click', () => { pause(); jump(j - center); });
+    strip.appendChild(dot);
+    dotEls.push(dot);
+  }
+  dots.appendChild(strip);
+  marquee.after(dots);
+
+  const PITCH = 18;
+  let center = n;        // positie van het actieve bolletje in de strip
+  let lastIdx = 0;       // laatst getoonde review (0..n-1)
+  const render = (c, animate) => {
+    strip.classList.toggle('no-anim', !animate);
+    strip.style.transform = `translateX(${(VISIBLE * PITCH) - c * PITCH}px)`;
+    dotEls.forEach((d, j) => {
+      const dist = Math.abs(j - c);
+      d.className = dist === 0 ? 'is-active' : dist > VISIBLE ? 'is-gone' : 'is-d' + dist;
+    });
+    if (!animate) void strip.offsetWidth;
+  };
+  const updateDots = () => {
+    const idx = ((currentIndex() % n) + n) % n;
+    let delta = idx - lastIdx;
+    if (delta > n / 2) delta -= n;
+    if (delta < -n / 2) delta += n;
+    if (!delta) return;
+    lastIdx = idx;
+    let next = center + delta;
+    if (next >= 2 * n || next < n) {
+      // Ongemerkt een periode terug/vooruit verschuiven, dan pas animeren
+      const shift = next >= 2 * n ? -n : n;
+      render(center + shift, false);
+      next += shift;
+    }
+    center = next;
+    render(center, true);
+  };
+  const jump = d => {
+    let target = currentIndex() + d;
+    if (looped && target < 0) { goTo(currentIndex() + n, false); target += n; }
+    goTo(target);
+  };
+
+  let settleTimer;
+  marquee.addEventListener('scroll', () => {
+    updateDots();
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(() => { normalize(); updateDots(); }, 150);
+  }, { passive: true });
+
+  // Automatisch doorlopen: elke 5 seconden één kaart, pauze bij aanraken
+  let autoTimer = null;
+  let resumeTimer = null;
+  const stop = () => { clearInterval(autoTimer); autoTimer = null; };
+  const start = () => {
+    stop();
+    if (!mobile.matches || prefersReducedMotion) return;
+    autoTimer = setInterval(() => goTo(currentIndex() + 1), 5000);
+  };
+  const pause = () => { stop(); clearTimeout(resumeTimer); resumeTimer = setTimeout(start, 6000); };
+
+  const setup = () => {
+    if (mobile.matches && looped) goTo(n, false);   // start op de kopie, zodat terugvegen ook kan
+    else marquee.scrollLeft = 0;
+    lastIdx = 0;
+    center = n;
+    render(center, false);
+    start();
+  };
+
+  marquee.addEventListener('touchstart', pause, { passive: true });
+  marquee.addEventListener('pointerdown', pause);
+  mobile.addEventListener('change', setup);
+  document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+  setup();
+}
+
 // Galerij lightbox
 const gallery = document.getElementById('gallery');
 const lightbox = document.getElementById('lightbox');

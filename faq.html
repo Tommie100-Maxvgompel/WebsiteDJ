@@ -8,7 +8,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css?v=9">
 </head>
 <body class="subpage">
 
@@ -16,7 +18,7 @@
 
 <header class="site-header" id="site-header">
   <nav class="navbar" aria-label="Hoofdnavigatie">
-    <a href="index.html" class="logo">DJ<span>MAX</span></a>
+    <a href="index.html" class="logo logo--img"><img src="images/logo-mg.png" alt="DJ Max – home" width="48" height="48"></a>
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="over-ons.html">Over ons</a></li>
@@ -25,7 +27,7 @@
       <li><a href="faq.html" aria-current="page">FAQ</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a href="contact.html" class="btn btn-primary nav-cta">Offerte aanvragen</a>
+    <a href="contact.html" class="btn btn-outline nav-cta">Offerte aanvragen</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu openen" aria-expanded="false" aria-controls="nav-links">
       <span></span><span></span><span></span>
     </button>
@@ -40,6 +42,7 @@
     <div class="section-inner section-inner--narrow">
       <h1>Veelgestelde vragen</h1>
 
+      <div class="faq-panel">
       <h2 class="faq-group">Boeken &amp; prijzen</h2>
       <div class="accordion">
         <details class="accordion-item">
@@ -63,7 +66,9 @@
           <p>Dat hangt vooral af van het aantal gasten en de ruimte. Twijfelt u? Kies &lsquo;Weet ik nog niet&rsquo; in het formulier, dan adviseren we u.</p>
         </details>
       </div>
+      </div>
 
+      <div class="faq-panel">
       <h2 class="faq-group">Muziek</h2>
       <div class="accordion">
         <details class="accordion-item">
@@ -83,7 +88,9 @@
           <p>Ja, geluid voor de ceremonie, achtergrondmuziek bij het diner en microfoons voor speeches zijn als extra optie toe te voegen.</p>
         </details>
       </div>
+      </div>
 
+      <div class="faq-panel">
       <h2 class="faq-group">Techniek &amp; locatie</h2>
       <div class="accordion">
         <details class="accordion-item">
@@ -98,6 +105,7 @@
           <summary>Kan het feest ook buiten of in een tent?</summary>
           <p>Ja, zolang de apparatuur droog staat en er stroom is. Denk aan een overkapping of partytent.</p>
         </details>
+      </div>
       </div>
 
       <div class="faq-contact">
@@ -135,6 +143,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=3" defer></script>
+<script src="script.js?v=8" defer></script>
 </body>
 </html>
