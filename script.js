@@ -211,7 +211,7 @@ if (quoteForm) {
   const confirmation = document.getElementById('form-confirmation');
   const errorMessage = document.getElementById('form-error-message');
 
-  // Vooraf invullen vanuit links als contact.html?pakket=standaard of ?type=bruiloft
+  // Vooraf invullen vanuit links als contact?pakket=standaard of ?type=bruiloft
   const params = new URLSearchParams(location.search);
   const prefill = (selectId, value) => {
     const select = document.getElementById(selectId);
