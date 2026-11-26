@@ -336,6 +336,8 @@ main { overflow-x: hidden; overflow-x: clip; }
 }
 .show-video img,
 .show-video video { width: 100%; height: 100%; object-fit: cover; }
+.show-video.is-playing { background: #000; }
+.show-video.is-playing video { object-fit: contain; }
 .show-video::after {
   content: "";
   position: absolute; inset: 0;
