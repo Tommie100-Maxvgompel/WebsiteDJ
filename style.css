@@ -864,3 +864,20 @@ main { overflow-x: hidden; overflow-x: clip; }
   .review-dots button.is-d2::before { transform: scale(0.75); }
   .review-dots button.is-d3::before { transform: scale(0.45); }
 }
+
+/* Achtergrondlaag achter het mobiele menu: tikken = sluiten */
+.nav-backdrop { display: none; }
+@media (max-width: 768px) {
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 150;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s var(--ease), visibility 0.3s;
+    cursor: pointer;
+  }
+  .nav-backdrop.open { opacity: 1; visibility: visible; }
+}

@@ -13,15 +13,21 @@ window.addEventListener('scroll', updateHeaderState, { passive: true });
 // Mobiel menu
 const navToggle = document.getElementById('nav-toggle');
 const navLinks = document.getElementById('nav-links');
-navToggle.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', isOpen);
-});
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  });
+// Donkere laag achter het open menu: tikken naast het menu sluit het
+const navBackdrop = document.createElement('div');
+navBackdrop.className = 'nav-backdrop';
+document.body.appendChild(navBackdrop);
+
+const setMenu = open => {
+  navLinks.classList.toggle('open', open);
+  navBackdrop.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', String(open));
+};
+navToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+navBackdrop.addEventListener('click', () => setMenu(false));
+navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && navLinks.classList.contains('open')) setMenu(false);
 });
 
 // Reviews: kaarten dupliceren voor een naadloze loop
